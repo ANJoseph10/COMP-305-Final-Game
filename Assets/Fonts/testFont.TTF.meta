@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 869ddf89248f5c74fb8ec04bace311df
+timeCreated: 1505568692
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 10
+  forceTextureCase: -1
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: AddStandardBitmap
+  fontNames:
+  - AddStandardBitmap
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 3
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
