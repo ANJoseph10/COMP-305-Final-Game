@@ -22,6 +22,11 @@ public class MenuControls : MonoBehaviour {
         SceneManager.LoadScene(1);
     }
 
+    public void Instructions()
+    {
+        SceneManager.LoadScene(3);
+    }
+
     public void RestartGame()
     {
         SceneManager.LoadScene(0);
