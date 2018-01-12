@@ -28,7 +28,7 @@ public class GeneratorScript : MonoBehaviour {
 	void SpawnEnemy(){
 		if (toSpawn != null && !(folder.transform.childCount > maxEnemies) ){
 			float ySpawn = 12;
-			float xSpawn = Random.Range(-10, -4);
+			float xSpawn = Random.Range(-4.9f, -10f);
 
 			Vector2 pos = new Vector2(xSpawn, ySpawn);
 			GameObject myEnemy = Instantiate(toSpawn, pos, Quaternion.identity);

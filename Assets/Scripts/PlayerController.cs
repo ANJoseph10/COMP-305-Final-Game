@@ -52,6 +52,10 @@ public class PlayerController : MonoBehaviour {
 		if (coll.tag == "bulletEnemy"){
 			Destroy(coll.gameObject, 0.1f);
 			health -= 10;
+            if (SceneManager.sceneCount == 4)
+            {
+                health -= 10;
+            }
 			if (health <= 0)
 				Die();
 
