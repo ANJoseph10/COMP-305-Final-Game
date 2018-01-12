@@ -35,8 +35,8 @@ public class GameManagerScript : MonoBehaviour {
          }
          if (sceneName == "level2")
          {
-             score2 = 1000;
-             score2 += add;
+             score = 1000;
+             score += add;
          }
          //if level is 2 then run this
          //if (score == 3000 && sceneName == "level2")
@@ -53,14 +53,14 @@ public class GameManagerScript : MonoBehaviour {
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
 
-        while (sceneName == "level1")
-        {
-            scoreText.GetComponent<Text>().text = score.ToString();
-        }
-        while (sceneName == "level2")
-        {
-            scoreText.GetComponent<Text>().text = score2.ToString();
-        }
+        //while (sceneName == "level1")
+        //{
+        scoreText.GetComponent<Text>().text = score.ToString();
+        //}
+        //while (sceneName == "level2")
+        //{
+        //    scoreText.GetComponent<Text>().text = score2.ToString();
+        //}
         comboText.GetComponent<Text>().text = combo.ToString();
 	}
 }
