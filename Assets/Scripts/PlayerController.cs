@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour {
 	public GameObject GameManagerObject;
 	public GameManagerScript gameManager;
 
+
+
 	//PUBLIC
 	public int energy;
 	public int health;
@@ -44,15 +46,25 @@ public class PlayerController : MonoBehaviour {
 	//DESIGN
 	[Header("Design Vars")]
 	public float speed = 2;
-
+    public string getSceneName()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        return sceneName;
+    }
 
 	void OnTriggerEnter2D(Collider2D coll){
 		if (isInvincible) return;
 
-		if (coll.tag == "bulletEnemy"){
+        
+
+        if (coll.tag == "bulletEnemy"){
 			Destroy(coll.gameObject, 0.1f);
-			health -= 10;
-            if (SceneManager.sceneCount == 4)
+            if(getSceneName() == "boss")
+            {
+                health -= 60;
+            }
+            else
             {
                 health -= 10;
             }
@@ -100,7 +112,15 @@ public class PlayerController : MonoBehaviour {
 
 			if (Input.GetKeyDown(KeyCode.J) && energy >= shootingCost){ 
 				Shoot();
-				energy -= shootingCost;
+                
+                if (getSceneName() == "boss")
+                {
+                    energy -= 400;
+                }
+                else
+                {
+                    energy -= shootingCost;
+                }
 				print(energy/10); //FIXME: make percentage based.
 			}
 
@@ -131,10 +151,21 @@ public class PlayerController : MonoBehaviour {
 				sr.color = new Color(1, 1, 1, 1);
 
 		}
-
-		if (energy < energyMax){
-			energy += 2;
-		}
+        if (getSceneName() == "boss")
+        {
+            if (energy < energyMax)
+            {
+                energy += 10;
+            }
+        }
+        else
+        {
+            if (energy < energyMax)
+            {
+                energy += 2;
+            }
+        }
+        
 
 	}
 

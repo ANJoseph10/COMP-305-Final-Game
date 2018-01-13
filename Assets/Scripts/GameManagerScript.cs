@@ -27,25 +27,28 @@ public class GameManagerScript : MonoBehaviour {
             score += add;
             
             //If level is still 1 then run this
-            if (score == 1000 && sceneName == "level1")
+            if (score >= 30000 && sceneName == "level1")
             {
                 SceneManager.LoadScene(4);
             }
          }
          if (sceneName == "level2")
          {
-             score = 1000;
+             score = 30000;
              score += add;
          }
-         //if level is 2 then run this
-         //if (score == 3000 && sceneName == "level2")
-         //{
-         //if score reaches this then boss will appear
-         //if (score == 3000)
-         //{
-         //    SceneManager.LoadScene(5);
-         //}
-         //}
+        //if level is 2 then run this
+        if (score >= 33000 && sceneName == "level2")
+        {
+            SceneManager.LoadScene(5);
+        }
+        //if score reaches this then boss will appear
+        if (sceneName == "boss")
+        {
+            score = 33000;
+            score += add;
+        }
+        
     }
 
     public void UpdateUI(){
