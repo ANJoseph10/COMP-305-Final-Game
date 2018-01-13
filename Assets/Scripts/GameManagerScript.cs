@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class GameManagerScript : MonoBehaviour {
 
 	public int score;
-    public int score2;
 	public int combo = 1;
 
 	public GameObject scoreText;
@@ -50,17 +49,7 @@ public class GameManagerScript : MonoBehaviour {
     }
 
     public void UpdateUI(){
-        Scene currentScene = SceneManager.GetActiveScene();
-        string sceneName = currentScene.name;
-
-        //while (sceneName == "level1")
-        //{
         scoreText.GetComponent<Text>().text = score.ToString();
-        //}
-        //while (sceneName == "level2")
-        //{
-        //    scoreText.GetComponent<Text>().text = score2.ToString();
-        //}
         comboText.GetComponent<Text>().text = combo.ToString();
 	}
 }
